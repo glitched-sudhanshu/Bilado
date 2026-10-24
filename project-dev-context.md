@@ -4,6 +4,12 @@
 
 This document is the durable product context for Bilado. It is intended to keep future engineering work and AI-assisted development aligned with the product direction.
 
+## Git and external-change rule
+
+AI agents and collaborators may make and verify local working-tree changes, but must not create commits or push to any remote repository without explicit confirmation from the user in the current conversation.
+
+This rule applies even when a change appears routine or is part of the normal implementation workflow. Before committing or pushing, the agent must show what will be included and wait for explicit authorization.
+
 Detailed database schemas, API contracts, webhook processing, authentication implementation, authorization, privacy, and security design belong in the engineering documentation created during implementation. This document defines the product intent and boundaries those designs must serve.
 
 ## Current project state
@@ -48,7 +54,7 @@ The tutor subscription and student fee collection are separate product concepts:
 - The tutor pays Bilado for access to the product.
 - The student or parent pays the tutor.
 
-The initial commercial model is a paid tutor plan with a coupon-based free trial. Exact pricing, billing provider, and fee structure remain open until payment-provider and product feasibility work is completed.
+The initial commercial model is a ₹499 monthly company plan. A controlled test coupon can reduce the monthly amount to ₹0 and keep access active across monthly renewals while the coupon remains valid, so usability can be tested without charging pilot users. This coupon is not evidence of willingness to pay and must not be exposed as an unrestricted public promotion. When it expires or is revoked, company access is blocked until the ₹499 subscription is renewed. The billing provider remains open until payment-provider and product feasibility work is completed.
 
 The account model is company-based:
 
@@ -292,7 +298,7 @@ The project must not claim:
 - One payment provider will be integrated initially.
 - Email/password and Google login are planned for the first release.
 - Phone OTP is deferred.
-- Push and email reminders are preferred before WhatsApp API integration.
+- Email reminders and Android Share Sheet sharing are preferred before SMS or WhatsApp API integration.
 - The project is both a learning project and a potentially usable product.
 - The next product artifact is the finalized user-flow specification.
 - Figma designs follow the user-flow specification.

@@ -138,6 +138,14 @@ The subscription screen shows:
 - Updated price after a valid coupon.
 - Buy subscription call to action.
 
+Initial plan:
+
+- Billing period: monthly.
+- Price: ₹499 per month.
+- Special test coupon: reduces the monthly amount to ₹0 and grants full product access while the coupon remains valid.
+- The special test coupon may continue across monthly renewals so the team can test product usability without charging pilot users.
+- When the coupon is revoked or expires, the company must renew the ₹499 monthly subscription to retain access.
+
 The screen must clearly distinguish:
 
 - Full price.
@@ -158,7 +166,7 @@ The screen must clearly distinguish:
 7. A successful subscription payment activates company access.
 8. A failed, cancelled, or pending payment does not activate protected access.
 
-The development coupon must not be treated as a permanent production billing strategy. It is a controlled test path for building the entitlement flow.
+The development coupon is a controlled usability-testing path, not evidence that users are willing to pay. It must not be exposed as an unrestricted public promotion.
 
 ## Flow 3: Home dashboard
 
@@ -184,7 +192,16 @@ The home screen shows aggregated values across cycles:
 - Number of pending or failed payments.
 - Number of overdue fee obligations.
 
-The summary must define the reporting period used. The initial default should be the current active collection period, with later support for explicit date filtering.
+The home dashboard aggregates all active cycles by default. Later versions may add explicit date filtering.
+
+## Student record
+
+When adding or editing a student, the tutor can provide:
+
+- Student name.
+- Student or parent email address, optional.
+
+The email is used for automatic payment-request and reminder delivery when available. It must not be required because some tutors may only have another contact channel.
 
 ## Flow 4: Create a new collection cycle
 
@@ -218,6 +235,12 @@ On submission:
 5. The user is taken to the cycle detail screen.
 
 The product should distinguish payment-request generation from message delivery. The backend can generate a request and link; actual delivery depends on the configured channel. WhatsApp API delivery remains out of scope for the MVP.
+
+For the MVP, the delivery channels are:
+
+- Backend-generated email when a student or parent email address is available.
+- Android Share Sheet for manual sharing when email is unavailable or the tutor prefers another channel.
+- Automatic SMS and WhatsApp delivery are deferred until a provider is selected.
 
 ## Flow 5: Cycle list and cycle detail
 
@@ -283,7 +306,9 @@ Force-send must:
 - Show failures separately from successful requests.
 - Require confirmation before sending to the entire cycle.
 
-The actual delivery channel must be finalized before Figma and backend implementation. The MVP should support a hosted payment link and Android sharing; automated WhatsApp delivery remains excluded.
+The MVP should support a hosted payment link, backend email delivery, and Android sharing. Automated SMS and WhatsApp delivery remain excluded.
+
+For the MVP, the backend sends payment-request and reminder emails when a student or parent email is available. The Android Share Sheet remains the manual fallback. Email delivery status must be visible separately from payment status.
 
 ## Flow 7: Student or parent payment
 
@@ -302,6 +327,17 @@ The actual delivery channel must be finalized before Figma and backend implement
 7. A receipt becomes available after successful confirmation.
 
 The payment page must not expose unrelated company data or other students.
+
+## Payment-request delivery behavior
+
+Student or parent email is optional because tutors may not have an email address for every payer.
+
+- If an email address exists, the backend can send the payment link by email.
+- If no email exists, the tutor can use the Android Share Sheet to share the link manually.
+- Force-send from a student view resends the email when available and otherwise opens the Share Sheet.
+- Force-send from a cycle view identifies eligible students and sends their emails when available; students without email are presented for manual Share Sheet sharing.
+- Sending a link must never create a duplicate fee obligation.
+- Delivery failure must not change the financial payment status.
 
 ## Flow 8: Multiple partial payments
 
@@ -355,6 +391,13 @@ Initial reminder behavior should be finalized before design. The minimum require
 - Stop reminders after the obligation is fully paid.
 - Continue overdue reminders only while an outstanding balance remains.
 - Do not send reminders for refunded or rejected obligations without a new eligible balance.
+
+The defined overdue behavior is:
+
+- Send a reminder email three days before the due date.
+- Send another reminder email on the due date.
+- After the due date is crossed, send a reminder email every two days while an outstanding balance remains.
+- The email contains the payment link and current outstanding amount.
 
 ## Flow 11: Receipts
 
@@ -410,17 +453,18 @@ After approval:
 
 - Subscription is owned by the company.
 - Subscription expiry blocks the master admin and approved company users from protected functionality.
+- The normal subscription price is ₹499 per month.
+- The controlled test coupon can keep a company’s monthly access free while the coupon remains valid.
 - Multiple partial payments are supported for one fee obligation.
 - Only `master_admin` or an approved `admin` can approve access requests.
 - The requester cannot grant themselves `admin`.
 - Students and parents do not need Bilado accounts to pay.
+- Student or parent email is optional; email delivery is used when available and Share Sheet sharing is the fallback.
 - Tuition collection is the first workflow; other payment-collection use cases remain deferred.
 
 ## Decisions still required before Figma sign-off
 
 - Exact subscription plans, prices, and billing period.
-- Exact reminder schedule relative to start date, due date, and overdue days.
 - First payment provider and supported payment methods.
-- Initial delivery channel for automatically generated payment requests.
 - Whether cycle reports default to the current month or the active cycle period.
 - Whether an admin can approve another admin or only viewer/editor requests.
