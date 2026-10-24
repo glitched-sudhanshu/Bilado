@@ -50,6 +50,15 @@ The tutor subscription and student fee collection are separate product concepts:
 
 The initial commercial model is a paid tutor plan with a coupon-based free trial. Exact pricing, billing provider, and fee structure remain open until payment-provider and product feasibility work is completed.
 
+The account model is company-based:
+
+- A company owns its users, cycles, students, payments, reports, and subscription.
+- The first company user is created as `master_admin`.
+- `master_admin` or an approved `admin` can approve access requests and assign the final role.
+- A requester cannot grant themselves administrative access.
+- A company subscription controls access for all approved company users.
+- One fee obligation supports multiple partial payments before becoming fully paid.
+
 ## Initial release scope
 
 The first release focuses on:
