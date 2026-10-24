@@ -464,7 +464,4 @@ After approval:
 
 ## Decisions still required before Figma sign-off
 
-- Exact subscription plans, prices, and billing period.
 - First payment provider and supported payment methods.
-- Whether cycle reports default to the current month or the active cycle period.
-- Whether an admin can approve another admin or only viewer/editor requests.
