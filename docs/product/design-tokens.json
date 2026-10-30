@@ -1,0 +1,142 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "Bilado",
+  "version": "1.0.0-draft",
+  "fontFamily": "Plus Jakarta Sans",
+  "shared": {
+    "spacingDp": { "compact": 8, "related": 12, "content": 16, "section": 24, "screen": 24 },
+    "strokeDp": { "default": 1, "focus": 2 },
+    "disabledOpacity": 0.38,
+    "letterSpacingSp": 0,
+    "easing": { "standard": "cubic-bezier(0.2, 0, 0, 1)" },
+    "gradientTransform": [[0.82, 0.57, -0.12], [-0.57, 0.82, 0.35]]
+  },
+  "profiles": {
+    "minimalistic": {
+      "typography": {
+        "display": { "fontSizeSp": 32, "lineHeightSp": 40, "weight": "Bold" },
+        "heading1": { "fontSizeSp": 24, "lineHeightSp": 32, "weight": "Bold" },
+        "heading2": { "fontSizeSp": 20, "lineHeightSp": 28, "weight": "Bold" },
+        "heading3": { "fontSizeSp": 16, "lineHeightSp": 24, "weight": "Bold" },
+        "body": { "fontSizeSp": 14, "lineHeightSp": 20, "weight": "Medium" },
+        "label": { "fontSizeSp": 12, "lineHeightSp": 16, "weight": "SemiBold" },
+        "caption": { "fontSizeSp": 11, "lineHeightSp": 14, "weight": "Bold" },
+        "amount": { "fontSizeSp": 26, "lineHeightSp": 34, "weight": "Bold" }
+      },
+      "radiiDp": { "input": 14, "button": 14, "card": 20, "modal": 28, "chip": 999 },
+      "componentDp": { "touchTarget": 48, "buttonHeight": 52, "inputHeight": 52, "iconSmall": 20, "iconDefault": 24, "topBarHeight": 56, "bottomNavHeight": 68 },
+      "motionMs": { "press": 120, "state": 200, "transition": 280, "modal": 300 }
+    },
+    "glassy": {
+      "typography": {
+        "display": { "fontSizeSp": 42, "lineHeightSp": 53, "weight": "Bold" },
+        "heading1": { "fontSizeSp": 24, "lineHeightSp": 30, "weight": "Bold" },
+        "heading2": { "fontSizeSp": 22, "lineHeightSp": 28, "weight": "Bold" },
+        "heading3": { "fontSizeSp": 20, "lineHeightSp": 25, "weight": "Bold" },
+        "body": { "fontSizeSp": 14, "lineHeightSp": 18, "weight": "Medium" },
+        "label": { "fontSizeSp": 12, "lineHeightSp": 15, "weight": "Medium" },
+        "caption": { "fontSizeSp": 11, "lineHeightSp": 14, "weight": "Bold" },
+        "amount": { "fontSizeSp": 34, "lineHeightSp": 43, "weight": "Bold" }
+      },
+      "radiiDp": { "input": 18, "button": 18, "card": 24, "modal": 30, "chip": 999 },
+      "componentDp": { "touchTarget": 48, "buttonHeight": 52, "inputHeight": 56, "iconSmall": 20, "iconDefault": 24, "topBarHeight": 56, "bottomNavHeight": 72 },
+      "motionMs": { "press": 120, "state": 200, "transition": 320, "modal": 340 }
+    }
+  },
+  "themes": {
+    "minimalisticLight": {
+      "profile": "minimalistic",
+      "colors": {
+        "bg.app": "#F8FAFC", "surface.base": "#FFFFFF", "surface.elevated": "#FFFFFF", "surface.subtle": "#F2F4F7", "surface.disabled": "#F2F4F7",
+        "text.primary": "#101828", "text.secondary": "#667085", "text.muted": "#98A2B3", "text.onAction": "#FFFFFF", "text.accent": "#3F43B8",
+        "action.primary": "#5B5CE2", "action.pressed": "#3F43B8", "action.disabled": "#BFC3FF",
+        "border.default": "#E4E7EC", "border.strong": "#98A2B3", "border.focus": "#5B5CE2",
+        "status.paid": "#087F5B", "status.paidSurface": "#D8F8ED", "status.pending": "#A15C00", "status.pendingSurface": "#FFF1C7",
+        "status.overdue": "#B42318", "status.overdueSurface": "#FEE4E2", "status.partial": "#1769AA", "status.partialSurface": "#DFF1FF",
+        "status.refunded": "#344054", "status.refundedSurface": "#F2F4F7", "scrim": "#00000052"
+      },
+      "materials": {
+        "strategy": "solid",
+        "cta": [{ "color": "#5B5CE2", "position": 0 }, { "color": "#5B5CE2", "position": 1 }],
+        "hero": [{ "color": "#FFFFFF", "position": 0 }, { "color": "#FFFFFF", "position": 1 }],
+        "surface": [{ "color": "#FFFFFF", "position": 0 }, { "color": "#FFFFFF", "position": 1 }],
+        "accent": [{ "color": "#5B5CE2", "position": 0 }, { "color": "#5B5CE2", "position": 1 }],
+        "border": [{ "color": "#E4E7EC", "position": 0 }, { "color": "#E4E7EC", "position": 1 }]
+      },
+      "effects": { "ambientOpacity": 0, "glassSurfaceOpacity": 1, "backgroundBlurDp": 0, "ambientBlurDp": 0, "shadowDefault": { "color": "#0000000A", "yDp": 6, "blurDp": 16 } }
+    },
+    "minimalisticDark": {
+      "profile": "minimalistic",
+      "colors": {
+        "bg.app": "#12111A", "surface.base": "#211F2C", "surface.elevated": "#2D293B", "surface.subtle": "#191527", "surface.disabled": "#3B3F83",
+        "text.primary": "#F5F2FC", "text.secondary": "#BDB5CD", "text.muted": "#A59BB8", "text.onAction": "#FFFFFF", "text.accent": "#C3ADFF",
+        "action.primary": "#8563DE", "action.pressed": "#7475F0", "action.disabled": "#3B3F83",
+        "border.default": "#464054", "border.strong": "#A59BB8", "border.focus": "#8563DE",
+        "status.paid": "#A5DCC1", "status.paidSurface": "#20392F", "status.pending": "#ECD09D", "status.pendingSurface": "#3E3423",
+        "status.overdue": "#FFBAC4", "status.overdueSurface": "#442932", "status.partial": "#B5D0F5", "status.partialSurface": "#26354A",
+        "status.refunded": "#D9D3E5", "status.refundedSurface": "#2D293B", "scrim": "#00000099"
+      },
+      "materials": {
+        "strategy": "solid",
+        "cta": [{ "color": "#8563DE", "position": 0 }, { "color": "#8563DE", "position": 1 }],
+        "hero": [{ "color": "#211F2C", "position": 0 }, { "color": "#211F2C", "position": 1 }],
+        "surface": [{ "color": "#211F2C", "position": 0 }, { "color": "#211F2C", "position": 1 }],
+        "accent": [{ "color": "#8563DE", "position": 0 }, { "color": "#8563DE", "position": 1 }],
+        "border": [{ "color": "#464054", "position": 0 }, { "color": "#464054", "position": 1 }]
+      },
+      "effects": { "ambientOpacity": 0, "glassSurfaceOpacity": 1, "backgroundBlurDp": 0, "ambientBlurDp": 0, "shadowDefault": { "color": "#00000038", "yDp": 6, "blurDp": 16 } }
+    },
+    "glassyLight": {
+      "profile": "glassy",
+      "colors": {
+        "bg.app": "#F3F2FA", "surface.base": "#F8FAFF", "surface.elevated": "#FFFFFF", "surface.subtle": "#EAE3FA", "surface.disabled": "#DCD6F6",
+        "text.primary": "#101828", "text.secondary": "#535169", "text.muted": "#344054", "text.onAction": "#FFFFFF", "text.accent": "#4C3584",
+        "action.primary": "#7446EF", "action.pressed": "#5730C5", "action.disabled": "#CDC6F5",
+        "border.default": "#C6C8F9", "border.strong": "#D2D0E9", "border.focus": "#7446EF",
+        "status.paid": "#087F5B", "status.paidSurface": "#D8F8ED", "status.pending": "#A15C00", "status.pendingSurface": "#FFF1C7",
+        "status.overdue": "#B42318", "status.overdueSurface": "#FEE4E2", "status.partial": "#1769AA", "status.partialSurface": "#DFF1FF",
+        "status.refunded": "#344054", "status.refundedSurface": "#EFEDF7", "scrim": "#211F2C52"
+      },
+      "materials": {
+        "strategy": "linear-gradient",
+        "cta": [{ "color": "#A28AFF", "position": 0 }, { "color": "#7446EF", "position": 0.28 }, { "color": "#5730C5", "position": 0.67 }, { "color": "#8B5CF6", "position": 1 }],
+        "hero": [{ "color": "#F1ECFF", "position": 0 }, { "color": "#D9CDF9", "position": 0.333 }, { "color": "#BEB0ED", "position": 0.667 }, { "color": "#E6DDF8", "position": 1 }],
+        "surface": [{ "color": "#FFFFFFEB", "position": 0 }, { "color": "#F8FAFFA6", "position": 0.5 }, { "color": "#DBE2FBAD", "position": 1 }],
+        "accent": [{ "color": "#8770DF", "position": 0 }, { "color": "#6042B8", "position": 1 }],
+        "border": [{ "color": "#FFFFFFF2", "position": 0 }, { "color": "#FFFFFFCC", "position": 1 }]
+      },
+      "effects": {
+        "ambientOpacity": 0.25, "glassSurfaceOpacity": 0.82, "backgroundBlurDp": 18, "ambientBlurDp": 48,
+        "shadowDefault": { "color": "#626D9F17", "yDp": 6, "blurDp": 16 }, "shadowCta": { "color": "#6544CC42", "yDp": 8, "blurDp": 18 },
+        "shadowHero": { "color": "#6557AE2E", "yDp": 14, "blurDp": 28 }, "innerHighlight": { "color": "#FFFFFFE6", "yDp": 1, "blurDp": 1 },
+        "innerDark": { "color": "#26136F47", "yDp": -2, "blurDp": 3 }
+      }
+    },
+    "glassyDark": {
+      "profile": "glassy",
+      "colors": {
+        "bg.app": "#100D1B", "surface.base": "#211C30", "surface.elevated": "#2C263E", "surface.subtle": "#342A46", "surface.disabled": "#3C2F54",
+        "text.primary": "#F6F3FF", "text.secondary": "#BEB6CF", "text.muted": "#9280B9", "text.onAction": "#FFFFFF", "text.accent": "#D3C2FF",
+        "action.primary": "#7444D8", "action.pressed": "#6035BC", "action.disabled": "#3C2F54",
+        "border.default": "#625574", "border.strong": "#9280B9", "border.focus": "#9A77F0",
+        "status.paid": "#A9E4C5", "status.paidSurface": "#433650", "status.pending": "#F1D5A6", "status.pendingSurface": "#433650",
+        "status.overdue": "#FFB9C6", "status.overdueSurface": "#433650", "status.partial": "#D3C2FF", "status.partialSurface": "#3C2F54",
+        "status.refunded": "#BEB6CF", "status.refundedSurface": "#342A46", "scrim": "#000000A6"
+      },
+      "materials": {
+        "strategy": "linear-gradient",
+        "cta": [{ "color": "#9A77F0", "position": 0 }, { "color": "#7444D8", "position": 0.333 }, { "color": "#6035BC", "position": 0.667 }, { "color": "#9264E9", "position": 1 }],
+        "hero": [{ "color": "#44346C", "position": 0 }, { "color": "#32244F", "position": 0.333 }, { "color": "#563C7E", "position": 0.667 }, { "color": "#322449", "position": 1 }],
+        "surface": [{ "color": "#2C263E", "position": 0 }, { "color": "#211C30", "position": 0.5 }, { "color": "#342A46", "position": 1 }],
+        "accent": [{ "color": "#B49BEF", "position": 0 }, { "color": "#9574DA", "position": 1 }],
+        "border": [{ "color": "#625574", "position": 0 }, { "color": "#3A304E", "position": 1 }]
+      },
+      "effects": {
+        "ambientOpacity": 0.15, "glassSurfaceOpacity": 0.86, "backgroundBlurDp": 18, "ambientBlurDp": 48,
+        "shadowDefault": { "color": "#00000038", "yDp": 6, "blurDp": 16 }, "shadowCta": { "color": "#8050E93D", "yDp": 6, "blurDp": 18 },
+        "shadowHero": { "color": "#0000004D", "yDp": 12, "blurDp": 26 }, "innerHighlight": { "color": "#E6D4FF66", "yDp": 1, "blurDp": 1 },
+        "innerDark": { "color": "#180B594D", "yDp": -2, "blurDp": 3 }
+      }
+    }
+  }
+}
