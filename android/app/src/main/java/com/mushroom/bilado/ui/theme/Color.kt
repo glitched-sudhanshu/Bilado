@@ -1,4 +1,4 @@
-package com.sushranjan.bilado.ui.theme
+package com.mushroom.bilado.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

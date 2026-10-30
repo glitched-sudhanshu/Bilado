@@ -1,4 +1,4 @@
-package com.sushranjan.bilado
+package com.mushroom.bilado
 
 import org.junit.Test
 

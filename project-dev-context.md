@@ -19,8 +19,8 @@ Detailed database schemas, API contracts, webhook processing, authentication imp
 - Backend code has not been created yet.
 - No payment provider has been selected.
 - No Figma design system or user-flow designs have been created.
-- The provisional Android application ID is `com.sudhanshuranjan.bilado`.
-- The application ID must be reviewed and finalized before the first Google Play upload.
+- The Android application ID is `com.mushroom.bilado`.
+- The application ID must not be changed after the first Google Play upload.
 
 The planned repository structure is:
 

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sushranjan.bilado"
+    namespace = "com.mushroom.bilado"
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.sushranjan.bilado"
+        applicationId = "com.mushroom.bilado"
         minSdk = 28
         targetSdk = 36
         versionCode = 1
